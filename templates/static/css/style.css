@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6A1B9A, #BA68C8, #FDD835);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Epunda Slab', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* big hero image */
+.hero {
+  padding: 220px 0;
+  background-image: url("https://github.com/Gab-P12/TestRepostoryII/blob/main/Branding/Painel%20Speaka%202.png?raw=true");
+  background-size: cover;
+  background-position: center;
+}
+
+/* small tagline under hero */
+.hero-tagline {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+/* navigation */
+nav {
+  background: linear-gradient(90deg, #6a0dad, #8a2be2);
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background 0.25s ease-in-out;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* page sections */
+.page {
+  display: none;
+  padding: 50px 20px;
+  min-height: 60vh;
+  animation: fadeIn 0.5s ease-in-out;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* show target via :target */
+:target {
+  display: block;
+}
+
+/* ensure home visible on initial load if no hash */
+body:not(:target) .home-page,
+#home:target ~ .home-page { /* fallback kept for compatibility; CSS :target behaves differently cross browsers */
+  display: block;
+}
+
+/* grid for images in Metodo */
+.linha {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.container1, .container2 {
+  flex: 1 1 300px;
+  padding: 8px;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+.container1 img, .container2 img {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .linha { flex-direction: column; }
+  .container1 img, .container2 img { height: auto; }
+}
+
+.page-inner {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  color: white;
+}
+
+.page-inner h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* small list style */
+.bullets {
+  list-style: none;
+  padding-left: 0;
+}
+.bullets li::before {
+  content: "° ";
+  margin-right: 8px;
+}
+
+/* contact/form helpers (if you replace iframe with a form) */
+.contato-page input,
+.contato-page textarea {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: none;
+  border-radius: 5px;
+}
+.contato-page button {
+  background: #8a2be2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contato-page button:hover {
+  background: #6a0dad;
+}
+
+/* animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* link styles */
+a { color: #752FA9; text-decoration: none; }
+a:hover { color: #D4B0E6; text-decoration: underline; }
